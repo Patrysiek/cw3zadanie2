@@ -1,0 +1,42 @@
+.button{
+    -fx-text-fill: #222;
+    -fx-font-weight: bold;
+    -fx-background-color: silver;
+    -fx-background-radius: 10.0;
+    -fx-border-radius: 5.0;
+    -fx-background-insets:1.0;
+    -fx-border-color: gray;
+	-fx-border-insets: 2.0;
+	-fx-border-width: 1.0;
+	-fx-min-width: 50;
+	-fx-pref-width: 50;
+	}
+	.split-pane *.split-pane-divider {
+    -fx-padding: 0.0;
+}
+.split-pane{
+	
+	-fx-padding: 2;
+	
+	-fx-border-radius: 5.0;
+	-fx-border-insets: 5,0,0,0;
+	-fx-border-width: 2;
+	-fx-border-color: darkgray ;
+	-fx-background-color: aqua;
+	-fx-background-insets: 5,0,0,0;
+	-fx-background-radius: 5.0;
+}
+#redHeadPhone{
+	-fx-background-color: crimson ;
+}
+#greenHeadPhone{
+	-fx-background-color: greenyellow ;
+}
+#sideArrow{
+	-fx-min-width: 30;
+	-fx-max-width: 30;
+}
+#upDownArrow{
+	-fx-min-height: 30;
+	-fx-max-height: 30;
+}

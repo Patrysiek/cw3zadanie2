@@ -1,0 +1,8 @@
+GridPane{
+	-fx-hgap: 2;
+	-fx-vgap: 2;
+	-fx-min-height: 100;
+	-fx-max-height: 100;
+	-fx-min-width: 120;
+	-fx-max-width: 120;
+}
