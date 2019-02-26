@@ -59,6 +59,19 @@ public class MainController {
 
 	public void setScreen(ScreenMode mode) {
 		this.screenMode = mode;
+		switch (mode) {
+		case SMS:
+			setSMSLayout(true);
+			break;
+
+		default:
+			break;
+		}
+	}
+	
+	public void setSMSLayout(boolean set) {
+		smsLayoutController.setDisable(!set);
+		smsLayoutController.setVisible(set);
 	}
 
 }
