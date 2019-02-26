@@ -14,4 +14,10 @@ public class ScreenController {
 		labelHour.textProperty().bind(refresher.messageProperty());
 		new Thread(refresher).start();
 	}
+
+
+	public void giveButtonData(char number, char letter) {
+		System.out.println(number+" "+letter);
+		
+	}
 }

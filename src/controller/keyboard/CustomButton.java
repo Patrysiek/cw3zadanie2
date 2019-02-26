@@ -20,7 +20,5 @@ public class CustomButton extends Button{
 	public void setLetters(String letters) {
 		this.letters = letters;
 	}
-
-	
 	
 }

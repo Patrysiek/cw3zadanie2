@@ -13,8 +13,8 @@ public class MainController {
 		keyboardLayoutController.setMainController(this);
 	}
 	
-	public void transferButton(char number, String letters) {
-		
+	public void transferButton(char number, char letter) {
+		screenLayoutController.giveButtonData(number,letter);
 	}
 	
 	

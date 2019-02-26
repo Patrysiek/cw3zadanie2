@@ -14,6 +14,8 @@ public class KeyboardController {
 	private GridPane downNumericGridPane;
 	private MainController mainController;
 	private long startTimeNumericButton;
+	private int choosedLetter = 0;
+	private boolean canClick = true;
 
 	@FXML
 	private void initialize() {
@@ -36,7 +38,7 @@ public class KeyboardController {
 			}
 
 			if (cb.getText().length() > 1) {
-				cb.setLetters(cb.getText().replaceAll("[^a-zA-Z.]", ""));
+				cb.setLetters(cb.getText().replaceAll("[^a-zA-Z.]", "") + cb.getNumber());
 				if (cb.getNumber() == '0')
 					cb.setLetters(" ");
 			} else {
@@ -44,32 +46,34 @@ public class KeyboardController {
 				cb.setLetters("");
 			}
 
-			cb.addEventFilter(MouseEvent.ANY, (event) -> transferButton(event,cb));
+			cb.setOnMouseClicked((event) -> changeLetter(event, cb));
 
 		}
 
 	}
 
-	private void transferButton(MouseEvent event,CustomButton cb) {
-		
-
-		if (event.getEventType().equals(MouseEvent.MOUSE_PRESSED)) {
-			startTimeNumericButton = System.currentTimeMillis();
-		} else if (event.getEventType().equals(MouseEvent.MOUSE_RELEASED)) {
-			if (System.currentTimeMillis() - startTimeNumericButton > 1500) {
-				cb.setOnMouseClicked((event2)->changeLetter(event2,cb));
-			} else {
-				System.out.println(cb.getNumber());
-			}
-				
-		}
+	private void setLetter(CustomButton cb) {
+		mainController.transferButton(cb.getNumber(), cb.getLetters().charAt(choosedLetter % cb.getLetters().length()));
+		choosedLetter = 0;
+		canClick = true;
 	}
 
-	private void changeLetter(MouseEvent event,CustomButton cb) {
-		cb.removeEventFilter(MouseEvent.ANY, (event2)->{});
-		if(event.getButton().equals(MouseButton.PRIMARY)){
-            System.out.println( cb.getLetters().charAt((event.getClickCount()-1)%cb.getLetters().length()));
-        }
+	private void changeLetter(MouseEvent event, CustomButton cb) {
+
+		if (!canClick)
+			return;
+
+		startTimeNumericButton = System.currentTimeMillis();
+		new Thread(() -> {
+			canClick = false;
+			while (System.currentTimeMillis() - startTimeNumericButton < 1000)
+				cb.setOnMouseClicked((event3) -> choosedLetter++);
+
+			cb.setOnMouseClicked((event2) -> changeLetter(event, cb));
+			setLetter(cb);
+
+		}).start();
+
 	}
 
 	public void setMainController(MainController mainController) {
