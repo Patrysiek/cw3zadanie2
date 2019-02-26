@@ -9,85 +9,157 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 <?import controller.keyboard.CustomButton?>
+<?import controller.keyboard.ControlButton?>
 
-<SplitPane fx:id="keyboardLayout" dividerPositions="0.48322147651006714" maxHeight="340.0" maxWidth="280.0" minHeight="340.0" minWidth="280.0" orientation="VERTICAL" prefHeight="0.0" prefWidth="280.0" stylesheets="layout/css/whole_kb_layout.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.keyboard.KeyboardController">
+<SplitPane fx:id="keyboardLayout"
+	dividerPositions="0.48322147651006714" maxHeight="340.0"
+	maxWidth="280.0" minHeight="340.0" minWidth="280.0"
+	orientation="VERTICAL" prefHeight="0.0" prefWidth="280.0"
+	stylesheets="layout/css/whole_kb_layout.css"
+	xmlns="http://javafx.com/javafx/8.0.171"
+	xmlns:fx="http://javafx.com/fxml/1"
+	fx:controller="controller.keyboard.KeyboardController">
 	<items>
-		<HBox alignment="CENTER" stylesheets="layout/css/upper_gp_layout.css">
+		<HBox alignment="CENTER"
+			stylesheets="layout/css/upper_gp_layout.css" fx:id="controlButtonBox">
 			<children>
 				<VBox alignment="CENTER" layoutX="210.0" layoutY="10.0">
 					<children>
-						<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="___">
+						<ControlButton maxHeight="1.7976931348623157E308"
+							maxWidth="1.7976931348623157E308" mnemonicParsing="false"
+							text="___" type="LEFT_CONTROL">
 							<VBox.margin>
 								<Insets />
 							</VBox.margin>
-						</Button>
-						<Button id="greenHeadPhone" layoutX="15.0" layoutY="30.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false">
+						</ControlButton>
+						<ControlButton id="greenHeadPhone" layoutX="15.0"
+							layoutY="30.0" maxHeight="1.7976931348623157E308"
+							maxWidth="1.7976931348623157E308" mnemonicParsing="false" type="GREEN_PHONE">
 							<VBox.margin>
 								<Insets />
 							</VBox.margin>
-						</Button>
+						</ControlButton>
 					</children>
 				</VBox>
 				<GridPane>
 					<columnConstraints>
-						<ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-						<ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-						<ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+						<ColumnConstraints halignment="CENTER"
+							hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+						<ColumnConstraints halignment="CENTER"
+							hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+						<ColumnConstraints halignment="CENTER"
+							hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
 					</columnConstraints>
 					<rowConstraints>
-						<RowConstraints minHeight="10.0" prefHeight="20.0" valignment="TOP" vgrow="SOMETIMES" />
-						<RowConstraints maxHeight="10" minHeight="10.0" prefHeight="10.0" valignment="CENTER" vgrow="SOMETIMES" />
-						<RowConstraints minHeight="10.0" prefHeight="20.0" valignment="BOTTOM" vgrow="SOMETIMES" />
+						<RowConstraints minHeight="10.0" prefHeight="20.0"
+							valignment="TOP" vgrow="SOMETIMES" />
+						<RowConstraints maxHeight="10" minHeight="10.0"
+							prefHeight="10.0" valignment="CENTER" vgrow="SOMETIMES" />
+						<RowConstraints minHeight="10.0" prefHeight="20.0"
+							valignment="BOTTOM" vgrow="SOMETIMES" />
 					</rowConstraints>
 					<children>
-						<Button id="upDownArrow" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" GridPane.columnIndex="1" />
-						<Button id="upDownArrow" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-						<Button id="sideArrow" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" GridPane.rowIndex="1" />
-						<Button id="sideArrow" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-						<Button id="OK" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="OK" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+						<ControlButton id="upDownArrow"
+							maxHeight="1.7976931348623157E308"
+							maxWidth="1.7976931348623157E308" mnemonicParsing="false"
+							GridPane.columnIndex="1" type="UP_ARROW"/>
+						<ControlButton id="upDownArrow"
+							maxHeight="1.7976931348623157E308"
+							maxWidth="1.7976931348623157E308" mnemonicParsing="false"
+							GridPane.columnIndex="1" GridPane.rowIndex="2" type="DOWN_ARROW"/>
+						<ControlButton id="sideArrow"
+							maxHeight="1.7976931348623157E308"
+							maxWidth="1.7976931348623157E308" mnemonicParsing="false"
+							GridPane.rowIndex="1" type="L_ARROW"/>
+						<ControlButton id="sideArrow"
+							maxHeight="1.7976931348623157E308"
+							maxWidth="1.7976931348623157E308" mnemonicParsing="false"
+							GridPane.columnIndex="2" GridPane.rowIndex="1" type="R_ARROW" />
+						<ControlButton id="OK"
+							maxHeight="1.7976931348623157E308"
+							maxWidth="1.7976931348623157E308" mnemonicParsing="false"
+							text="OK" GridPane.columnIndex="1" GridPane.rowIndex="1" type="OK"/>
 					</children>
 				</GridPane>
 				<VBox alignment="CENTER" minWidth="50.0" prefWidth="50.0">
 					<children>
-						<Button maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="___">
+						<ControlButton maxHeight="1.7976931348623157E308"
+							maxWidth="1.7976931348623157E308" mnemonicParsing="false"
+							text="___" type="RIGHT_CONTROL">
 							<VBox.margin>
 								<Insets />
 							</VBox.margin>
-						</Button>
-						<Button id="redHeadPhone" layoutX="15.0" layoutY="30.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false">
+						</ControlButton>
+						<ControlButton id="redHeadPhone" layoutX="15.0"
+							layoutY="30.0" maxHeight="1.7976931348623157E308"
+							maxWidth="1.7976931348623157E308" mnemonicParsing="false" type="RED_PHONE">
 							<VBox.margin>
 								<Insets />
 							</VBox.margin>
-						</Button>
+						</ControlButton>
 					</children>
 				</VBox>
 			</children>
 		</HBox>
-		<GridPane alignment="CENTER" stylesheets="layout/css/down_gp_layout.css" fx:id="downNumericGridPane">
+		<GridPane alignment="CENTER"
+			stylesheets="layout/css/down_gp_layout.css"
+			fx:id="downNumericGridPane">
 			<columnConstraints>
-				<ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-				<ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-				<ColumnConstraints halignment="CENTER" hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+				<ColumnConstraints halignment="CENTER"
+					hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+				<ColumnConstraints halignment="CENTER"
+					hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+				<ColumnConstraints halignment="CENTER"
+					hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
 			</columnConstraints>
 			<rowConstraints>
-				<RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
-				<RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
-				<RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
-				<RowConstraints minHeight="10.0" prefHeight="30.0" valignment="CENTER" vgrow="SOMETIMES" />
+				<RowConstraints minHeight="10.0" prefHeight="30.0"
+					valignment="CENTER" vgrow="SOMETIMES" />
+				<RowConstraints minHeight="10.0" prefHeight="30.0"
+					valignment="CENTER" vgrow="SOMETIMES" />
+				<RowConstraints minHeight="10.0" prefHeight="30.0"
+					valignment="CENTER" vgrow="SOMETIMES" />
+				<RowConstraints minHeight="10.0" prefHeight="30.0"
+					valignment="CENTER" vgrow="SOMETIMES" />
 			</rowConstraints>
 			<children>
-				<CustomButton maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="1 ." number="1" />
-				<CustomButton maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="4&#10;ghi" GridPane.rowIndex="1" />
-				<CustomButton maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="7&#10;pqrs" GridPane.rowIndex="2" />
-				<CustomButton maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="*" GridPane.rowIndex="3" />
-				<CustomButton maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="2&#10;abc"  GridPane.columnIndex="1" />
-				<CustomButton maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="5&#10;jkl" GridPane.columnIndex="1" GridPane.rowIndex="1" />
-				<CustomButton maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="8&#10;tuv" GridPane.columnIndex="1" GridPane.rowIndex="2" />
-				<CustomButton maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="0&#10;&#x2014;&#x2014;" GridPane.columnIndex="1" GridPane.rowIndex="3" />
-				<CustomButton maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="3&#10;def" GridPane.columnIndex="2" />
-				<CustomButton maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="6&#10;mno" GridPane.columnIndex="2" GridPane.rowIndex="1" />
-				<CustomButton maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="9&#10;wxyz" GridPane.columnIndex="2" GridPane.rowIndex="2" />
-				<CustomButton maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="#" GridPane.columnIndex="2" GridPane.rowIndex="3" />
+				<CustomButton maxHeight="1.7976931348623157E308"
+					maxWidth="1.7976931348623157E308" mnemonicParsing="false"
+					text="1 ." number="1" />
+				<CustomButton maxHeight="1.7976931348623157E308"
+					maxWidth="1.7976931348623157E308" mnemonicParsing="false"
+					text="4&#10;ghi" GridPane.rowIndex="1" />
+				<CustomButton maxHeight="1.7976931348623157E308"
+					maxWidth="1.7976931348623157E308" mnemonicParsing="false"
+					text="7&#10;pqrs" GridPane.rowIndex="2" />
+				<CustomButton maxHeight="1.7976931348623157E308"
+					maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="*"
+					GridPane.rowIndex="3" />
+				<CustomButton maxHeight="1.7976931348623157E308"
+					maxWidth="1.7976931348623157E308" mnemonicParsing="false"
+					text="2&#10;abc" GridPane.columnIndex="1" />
+				<CustomButton maxHeight="1.7976931348623157E308"
+					maxWidth="1.7976931348623157E308" mnemonicParsing="false"
+					text="5&#10;jkl" GridPane.columnIndex="1" GridPane.rowIndex="1" />
+				<CustomButton maxHeight="1.7976931348623157E308"
+					maxWidth="1.7976931348623157E308" mnemonicParsing="false"
+					text="8&#10;tuv" GridPane.columnIndex="1" GridPane.rowIndex="2" />
+				<CustomButton maxHeight="1.7976931348623157E308"
+					maxWidth="1.7976931348623157E308" mnemonicParsing="false"
+					text="0&#10;&#x2014;&#x2014;" GridPane.columnIndex="1"
+					GridPane.rowIndex="3" />
+				<CustomButton maxHeight="1.7976931348623157E308"
+					maxWidth="1.7976931348623157E308" mnemonicParsing="false"
+					text="3&#10;def" GridPane.columnIndex="2" />
+				<CustomButton maxHeight="1.7976931348623157E308"
+					maxWidth="1.7976931348623157E308" mnemonicParsing="false"
+					text="6&#10;mno" GridPane.columnIndex="2" GridPane.rowIndex="1" />
+				<CustomButton maxHeight="1.7976931348623157E308"
+					maxWidth="1.7976931348623157E308" mnemonicParsing="false"
+					text="9&#10;wxyz" GridPane.columnIndex="2" GridPane.rowIndex="2" />
+				<CustomButton maxHeight="1.7976931348623157E308"
+					maxWidth="1.7976931348623157E308" mnemonicParsing="false" text="#"
+					GridPane.columnIndex="2" GridPane.rowIndex="3" />
 			</children>
 			<padding>
 				<Insets bottom="2.0" left="2.0" right="2.0" top="2.0" />

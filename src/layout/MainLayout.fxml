@@ -11,8 +11,7 @@
 	fx:id="mainLayout"
 	fx:controller="controller.MainController">
 	<items>
-		<fx:include source="ScreenLayout.fxml" fx:id="screenLayout" />
-		<fx:include source="KeyboardLayout.fxml"
-			fx:id="keyboardLayout" />
+		<fx:include source="WallpaperLayout.fxml" fx:id="wallpaperLayout" />
+		<fx:include source="KeyboardLayout.fxml" fx:id="keyboardLayout" />
 	</items>
 </SplitPane>

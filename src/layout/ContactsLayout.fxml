@@ -1,23 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.StackPane?>
 
-<SplitPane fx:id="screenLayout" dividerPositions="0.1, 0.8" maxHeight="240.0" maxWidth="280.0" minHeight="240.0" minWidth="280.0" orientation="VERTICAL" prefHeight="240.0" prefWidth="280.0" stylesheets="/layout/css/screen_layout.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.screen.WallpaperController">
+<SplitPane fx:id="wallpaperLayout" dividerPositions="0.1, 0.8" maxHeight="240.0" maxWidth="280.0" minHeight="240.0" minWidth="280.0" orientation="VERTICAL" prefHeight="240.0" prefWidth="280.0" stylesheets="/layout/css/screen_layout.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.screen.WallpaperController">
 	<items>
 		<Label fx:id="labelHour" alignment="CENTER" maxHeight="20.0" maxWidth="1.7976931348623157E308" minHeight="20.0" prefHeight="20.0" text="GODZINA" />
 		<StackPane maxHeight="180.0" minHeight="180.0">
 			<children>
 				<Pane maxHeight="180.0" minHeight="180.0" prefHeight="180.0" />
             <TextField fx:id="numberScreenField" editable="false" visible="false" />
+				<ScrollPane hbarPolicy="NEVER" maxHeight="180.0" minHeight="180.0" prefHeight="180.0" vbarPolicy="NEVER" visible="false" />
 			</children>
 		</StackPane>
-		<SplitPane dividerPositions="0.3, 0.7" maxHeight="30.0" minHeight="30.0" prefHeight="30.0" stylesheets="/layout/css/screen_options.css">
+		<SplitPane dividerPositions="0.5" maxHeight="30.0" minHeight="30.0" prefHeight="30.0" stylesheets="/layout/css/screen_options.css">
 			<items>
-				<Label fx:id="leftLabel" alignment="CENTER" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Polacz" />
 				<Label fx:id="middleLabel" alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Kontakty" />
 				<Label fx:id="rightLabel" alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="SMS" />
 			</items>
