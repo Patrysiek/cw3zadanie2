@@ -6,9 +6,13 @@
 	maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity"
 	orientation="VERTICAL" prefHeight="550.0" prefWidth="270.0"
 	xmlns="http://javafx.com/javafx/8.0.171"
-	xmlns:fx="http://javafx.com/fxml/1" stylesheets="/layout/css/main_layout.css">
+	xmlns:fx="http://javafx.com/fxml/1"
+	stylesheets="/layout/css/main_layout.css" 
+	fx:id="mainLayout"
+	fx:controller="controller.MainController">
 	<items>
-		<fx:include source="ScreenLayout.fxml" />
-		<fx:include source="KeyboardLayout.fxml" />
+		<fx:include source="ScreenLayout.fxml" fx:id="screenLayout" />
+		<fx:include source="KeyboardLayout.fxml"
+			fx:id="keyboardLayout" />
 	</items>
 </SplitPane>

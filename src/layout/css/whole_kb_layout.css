@@ -10,6 +10,10 @@
 	-fx-border-width: 1.0;
 	-fx-min-width: 50;
 	-fx-pref-width: 50;
+	-fx-min-height: 50;
+	-fx-max-height: 50;
+	-fx-font-size: 13;
+	-fx-text-alignment: center;
 	}
 	.split-pane *.split-pane-divider {
     -fx-padding: 0.0;
@@ -25,18 +29,7 @@
 	-fx-background-color: aqua;
 	-fx-background-insets: 5,0,0,0;
 	-fx-background-radius: 5.0;
+	-fx-min-height: 340;
+	-fx-max-height: 340;
 }
-#redHeadPhone{
-	-fx-background-color: crimson ;
-}
-#greenHeadPhone{
-	-fx-background-color: greenyellow ;
-}
-#sideArrow{
-	-fx-min-width: 30;
-	-fx-max-width: 30;
-}
-#upDownArrow{
-	-fx-min-height: 30;
-	-fx-max-height: 30;
-}
+
