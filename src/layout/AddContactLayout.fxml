@@ -2,37 +2,33 @@
 
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.SplitPane?>
-<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.Pane?>
 
-<SplitPane fx:id="mainSplitPane" dividerPositions="0.15, 0.8"
-	maxHeight="240.0" maxWidth="280.0" minHeight="240.0" minWidth="280.0"
-	orientation="VERTICAL" 
+<SplitPane fx:id="mainSplitPane"
+	dividerPositions="0.5, 0.5, 0.5, 0.5, 0.5" maxHeight="240.0"
+	maxWidth="280.0" minHeight="240.0" minWidth="280.0"
+	orientation="VERTICAL" prefHeight="240.0" prefWidth="280.0"
 	stylesheets="/layout/css/screen_layout.css"
 	xmlns="http://javafx.com/javafx/8.0.171"
 	xmlns:fx="http://javafx.com/fxml/1"
-	fx:controller="controller.screen.SMSController" >
+	fx:controller="controller.screen.AddContactController">
 	<items>
-
-		<SplitPane dividerPositions="0.4" prefHeight="200.0"
-			prefWidth="200.0" >
-			<items>
-				<Label prefHeight="24.0" prefWidth="37.0" text="DO:" />
-				<TextField fx:id="contactField" editable="false"/>
-			</items>
-		</SplitPane>
-		<TextArea fx:id="smsContent" prefHeight="200.0"
-			prefWidth="200.0" editable="false"/>
+		<Label text="Nazwa" />
+		<TextField />
+		<Label layoutX="10.0" layoutY="10.0" text="Numer" />
+		<TextField layoutX="10.0" layoutY="10.0" />
+		<Pane prefHeight="200.0" prefWidth="200.0" />
 		<SplitPane dividerPositions="0.5" maxHeight="30.0"
 			minHeight="30.0" prefHeight="30.0"
 			stylesheets="/layout/css/screen_options.css">
 			<items>
 				<Label fx:id="leftLabel" alignment="CENTER" layoutX="10.0"
 					layoutY="10.0" maxHeight="1.7976931348623157E308"
-					maxWidth="1.7976931348623157E308" text="Wyslij" />
+					maxWidth="1.7976931348623157E308" text="Kontakty" />
 				<Label fx:id="rightLabel" alignment="CENTER" layoutX="10.0"
 					layoutY="10.0" maxHeight="1.7976931348623157E308"
-					maxWidth="1.7976931348623157E308" text="Usun" />
+					maxWidth="1.7976931348623157E308" text="SMS" />
 			</items>
 		</SplitPane>
 	</items>

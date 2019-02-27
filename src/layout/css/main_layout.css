@@ -5,3 +5,9 @@
 .split-pane{
 	-fx-background-color: black;
 }
+#hour{
+	-fx-background-color: gray  ;
+	-fx-min-width: 150;
+	-fx-max-width: 150;
+	-fx-border-radius: 5;
+}

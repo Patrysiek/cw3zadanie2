@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.Pane?>
 <?import javafx.scene.layout.StackPane?>
 
-<SplitPane fx:id="wallpaperLayout" dividerPositions="0.1, 0.8"
+<SplitPane fx:id="mainSplitPane" dividerPositions="0.1"
 	maxHeight="240.0" maxWidth="280.0" minHeight="240.0" minWidth="280.0"
 	orientation="VERTICAL" prefHeight="240.0" prefWidth="280.0"
 	stylesheets="/layout/css/screen_layout.css"
@@ -14,10 +14,8 @@
 	xmlns:fx="http://javafx.com/fxml/1"
 	fx:controller="controller.screen.WallpaperController">
 	<items>
-		<Label fx:id="labelHour" alignment="CENTER" maxHeight="20.0"
-			maxWidth="1.7976931348623157E308" minHeight="20.0" prefHeight="20.0"
-			text="GODZINA" />
-		<StackPane maxHeight="180.0" minHeight="180.0">
+
+		<StackPane maxHeight="200.0" minHeight="200.0">
 			<children>
 				<Pane maxHeight="180.0" minHeight="180.0" prefHeight="180.0" />
 				<TextField fx:id="numberScreenField" editable="false"
@@ -28,7 +26,7 @@
 			minHeight="30.0" prefHeight="30.0"
 			stylesheets="/layout/css/screen_options.css">
 			<items>
-				<Label fx:id="middleLabel" alignment="CENTER" layoutX="10.0"
+				<Label fx:id="leftLabel" alignment="CENTER" layoutX="10.0"
 					layoutY="10.0" maxHeight="1.7976931348623157E308"
 					maxWidth="1.7976931348623157E308" text="Kontakty" />
 				<Label fx:id="rightLabel" alignment="CENTER" layoutX="10.0"

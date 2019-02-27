@@ -3,13 +3,12 @@ package controller.screen;
 import controller.keyboard.ControlButtonType;
 
 
-public class ContactsController extends Controller{
+public class AddContactController extends Controller {
 
-
+	
 	public void chooseFunction(ControlButtonType type) {
 		switch (type) {
 		case RED_PHONE:
-
 			if (checkScreenSetter())
 				break;
 			screenSetter.setScreen(ScreenMode.WALLPAPER);
@@ -19,9 +18,6 @@ public class ContactsController extends Controller{
 		case GREEN_PHONE:
 			break;
 		case LEFT_CONTROL:
-			if (checkScreenSetter())
-				break;
-			screenSetter.setScreen(ScreenMode.ADD_CONTACTS);
 			break;
 		case L_ARROW:
 			break;
@@ -35,8 +31,9 @@ public class ContactsController extends Controller{
 			break;
 		default:
 			break;
-
 		}
 	}
+	
 
+	
 }

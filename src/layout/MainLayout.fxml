@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.StackPane?>
 
 <SplitPane fx:id="mainLayout" maxHeight="-Infinity"
@@ -9,14 +10,23 @@
 	stylesheets="/layout/css/main_layout.css"
 	xmlns="http://javafx.com/javafx/8.0.171"
 	xmlns:fx="http://javafx.com/fxml/1"
-	fx:controller="controller.MainController" >
+	fx:controller="controller.MainController">
 	<items>
-      <StackPane>
-         <children>
-      		<fx:include fx:id="wallpaperLayout" source="WallpaperLayout.fxml" />
-      		<fx:include fx:id="smsLayout" source="SMSLayout.fxml" />
-         </children>
-      </StackPane>
-		<fx:include source="KeyboardLayout.fxml" fx:id="keyboardLayout" />
+		<Label fx:id="labelHour" alignment="CENTER" maxHeight="20.0"
+			maxWidth="1.7976931348623157E308" minHeight="20.0" prefHeight="20.0"
+			text="GODZINA" id="hour" />
+		<StackPane>
+			<children>
+				<fx:include fx:id="addContactLayout"
+					source="AddContactLayout.fxml" />
+				<fx:include fx:id="smsLayout" source="SMSLayout.fxml" />
+				<fx:include fx:id="contactsLayout"
+					source="ContactsLayout.fxml" />
+				<fx:include fx:id="wallpaperLayout"
+					source="WallpaperLayout.fxml" />
+			</children>
+		</StackPane>
+		<fx:include source="KeyboardLayout.fxml"
+			fx:id="keyboardLayout" />
 	</items>
 </SplitPane>

@@ -1,32 +1,18 @@
 package controller.screen;
 
-import controller.MainController;
 import controller.keyboard.ControlButtonType;
 import javafx.application.Platform;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
-import javafx.scene.control.SplitPane;
 import javafx.scene.control.TextField;
 
-public class WallpaperController {
-	@FXML
-	private Label labelHour;
-	@FXML
-	private ScreenMode screenMode = ScreenMode.WALLPAPER;
+public class WallpaperController extends Controller {
+
 	@FXML
 	private TextField numberScreenField;
 	@FXML
-	private Label rightLabel, leftLabel, middleLabel;
-	@FXML
-	private SplitPane wallpaperLayout;
-	private MainController mainController;
+	private Label rightLabel, leftLabel;
 
-	@FXML
-	private void initialize() {
-		HourRefresher refresher = new HourRefresher();
-		labelHour.textProperty().bind(refresher.messageProperty());
-		new Thread(refresher).start();
-	}
 
 	public void giveButtonData(char number) {
 		if (!numberScreenField.isVisible()) {
@@ -36,16 +22,16 @@ public class WallpaperController {
 		Platform.runLater(() -> numberScreenField.appendText(Character.toString(number)));
 	}
 
-	public void chooseWallpaperFunction(ControlButtonType type) {
+	public void chooseFunction(ControlButtonType type) {
 		switch (type) {
 		case RED_PHONE:
 			setLayoutToDefault();
 			break;
 		case RIGHT_CONTROL:
 			if (!numberScreenField.isVisible()) {
-				setDisable(true);
-				setVisible(false);
-				setSMSLayout();
+				if (checkScreenSetter())
+					break;
+				screenSetter.setScreen(ScreenMode.SMS);
 			} else {
 				deleteOneCharacter();
 			}
@@ -73,18 +59,15 @@ public class WallpaperController {
 	private void setContactsLayout() {
 		if (numberScreenField.isVisible())
 			return;
-		setDisable(true);
-		setVisible(false);
-		mainController.setScreen(ScreenMode.CONTACTS);
-
+		screenSetter.setScreen(ScreenMode.CONTACTS);
 	}
 
 	private void setLayoutToDefault() {
 		if (!numberScreenField.isVisible())
 			return;
-		if(numberScreenField.isDisable())
+		if (numberScreenField.isDisable())
 			numberScreenField.setDisable(false);
-		
+
 		numberScreenField.setVisible(false);
 		numberScreenField.setText("");
 		rightLabel.setText("SMS");
@@ -98,23 +81,5 @@ public class WallpaperController {
 				.setText(numberScreenField.getText().substring(0, numberScreenField.getLength() - 1)));
 	}
 
-	private void setSMSLayout() {
-		if (mainController == null) {
-			System.out.println("Wstaw controller xd");
-			return;
-		}
-		mainController.setScreen(ScreenMode.SMS);
-	}
 
-	public void setVisible(boolean visible) {
-		this.wallpaperLayout.setVisible(visible);
-	}
-
-	public void setDisable(boolean disable) {
-		this.wallpaperLayout.setDisable(disable);
-	}
-
-	public void setMainController(MainController mainController) {
-		this.mainController = mainController;
-	}
 }

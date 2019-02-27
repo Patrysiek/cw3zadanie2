@@ -1,5 +1,5 @@
 package controller.screen;
 
 public enum ScreenMode {
-WALLPAPER,SMS,CONTACTS,DIAL;
+WALLPAPER,SMS,CONTACTS,ADD_CONTACTS;
 }
