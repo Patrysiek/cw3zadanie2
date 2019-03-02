@@ -1,6 +1,5 @@
 package controller;
 
-import Model.HourRefresher;
 import controller.keyboard.ControlButtonType;
 import controller.keyboard.KeyboardController;
 import controller.screen.AddContactController;
@@ -10,6 +9,7 @@ import controller.screen.ScreenMode;
 import controller.screen.WallpaperController;
 import javafx.fxml.FXML;
 import javafx.scene.control.Label;
+import model.HourRefresher;
 
 public class MainController implements IScreenSetter {
 	@FXML
@@ -25,6 +25,7 @@ public class MainController implements IScreenSetter {
 	@FXML
 	private AddContactController addContactLayoutController;
 	
+	public static final String CONTACTS_FILE = "contacts.properties";
 	
 	private ScreenMode screenMode = ScreenMode.WALLPAPER;
 
@@ -50,7 +51,8 @@ public class MainController implements IScreenSetter {
 		case SMS:
 			smsLayoutController.giveButtonData(number, letter);
 			break;
-		case CONTACTS:
+		case ADD_CONTACTS:
+			addContactLayoutController.giveButtonData(number, letter);
 			break;
 		default:
 			break;
@@ -85,6 +87,7 @@ public class MainController implements IScreenSetter {
 			setSMSLayout(true);
 			setContactsLayout(false);
 			setAddContactsLayout(false);
+			smsLayoutController.loadContacts();
 			break;
 		case WALLPAPER:
 			setWallpaperLayout(true);
@@ -97,6 +100,7 @@ public class MainController implements IScreenSetter {
 			setSMSLayout(false);
 			setContactsLayout(true);
 			setAddContactsLayout(false);
+			contactsLayoutController.loadContacts();
 			break;
 		case ADD_CONTACTS:
 			setWallpaperLayout(false);

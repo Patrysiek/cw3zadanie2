@@ -13,7 +13,6 @@ public class WallpaperController extends Controller {
 	@FXML
 	private Label rightLabel, leftLabel;
 
-
 	public void giveButtonData(char number) {
 		if (!numberScreenField.isVisible()) {
 			numberScreenField.setVisible(true);
@@ -40,19 +39,20 @@ public class WallpaperController extends Controller {
 			setContactsLayout();
 			break;
 		case GREEN_PHONE:
-			simulateCalling();
+			simulateCalling(numberScreenField.getText());
 			break;
 		default:
 			break;
 		}
 	}
 
-	private void simulateCalling() {
+	private void simulateCalling(String data) {
 		if (!numberScreenField.isVisible())
 			return;
 		if (numberScreenField.getLength() <= 0)
 			return;
-		Platform.runLater(() -> numberScreenField.setText("DZWONIENIE..."));
+
+		Platform.runLater(() -> numberScreenField.setText("DZWONIENIE DO: " + data));
 		numberScreenField.setDisable(true);
 	}
 
@@ -80,6 +80,5 @@ public class WallpaperController extends Controller {
 		Platform.runLater(() -> numberScreenField
 				.setText(numberScreenField.getText().substring(0, numberScreenField.getLength() - 1)));
 	}
-
 
 }

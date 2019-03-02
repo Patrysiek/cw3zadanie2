@@ -19,7 +19,7 @@
 			<children>
 				<Pane maxHeight="180.0" minHeight="180.0" prefHeight="180.0" />
 				<TextField fx:id="numberScreenField" editable="false"
-					visible="false" />
+					visible="false" id="caller"/>
 			</children>
 		</StackPane>
 		<SplitPane dividerPositions="0.5" maxHeight="30.0"

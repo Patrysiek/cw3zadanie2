@@ -41,20 +41,14 @@
 						</ControlButton>
 					</children>
 				</VBox>
-				<GridPane>
+				<GridPane >
 					<columnConstraints>
-						<ColumnConstraints halignment="CENTER"
-							hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-						<ColumnConstraints halignment="CENTER"
-							hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
 						<ColumnConstraints halignment="CENTER"
 							hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
 					</columnConstraints>
 					<rowConstraints>
 						<RowConstraints minHeight="10.0" prefHeight="20.0"
 							valignment="TOP" vgrow="SOMETIMES" />
-						<RowConstraints maxHeight="10" minHeight="10.0"
-							prefHeight="10.0" valignment="CENTER" vgrow="SOMETIMES" />
 						<RowConstraints minHeight="10.0" prefHeight="20.0"
 							valignment="BOTTOM" vgrow="SOMETIMES" />
 					</rowConstraints>
@@ -62,23 +56,11 @@
 						<ControlButton id="upDownArrow"
 							maxHeight="1.7976931348623157E308"
 							maxWidth="1.7976931348623157E308" mnemonicParsing="false"
-							GridPane.columnIndex="1" type="UP_ARROW"/>
+							GridPane.columnIndex="0" type="UP_ARROW"/>
 						<ControlButton id="upDownArrow"
 							maxHeight="1.7976931348623157E308"
 							maxWidth="1.7976931348623157E308" mnemonicParsing="false"
-							GridPane.columnIndex="1" GridPane.rowIndex="2" type="DOWN_ARROW"/>
-						<ControlButton id="sideArrow"
-							maxHeight="1.7976931348623157E308"
-							maxWidth="1.7976931348623157E308" mnemonicParsing="false"
-							GridPane.rowIndex="1" type="L_ARROW"/>
-						<ControlButton id="sideArrow"
-							maxHeight="1.7976931348623157E308"
-							maxWidth="1.7976931348623157E308" mnemonicParsing="false"
-							GridPane.columnIndex="2" GridPane.rowIndex="1" type="R_ARROW" />
-						<ControlButton id="OK"
-							maxHeight="1.7976931348623157E308"
-							maxWidth="1.7976931348623157E308" mnemonicParsing="false"
-							text="OK" GridPane.columnIndex="1" GridPane.rowIndex="1" type="OK"/>
+							GridPane.columnIndex="0" GridPane.rowIndex="1" type="DOWN_ARROW"/>
 					</children>
 				</GridPane>
 				<VBox alignment="CENTER" minWidth="50.0" prefWidth="50.0">

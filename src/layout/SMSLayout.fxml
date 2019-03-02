@@ -1,38 +1,30 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.SplitPane?>
 <?import javafx.scene.control.TextArea?>
-<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.StackPane?>
 
-<SplitPane fx:id="mainSplitPane" dividerPositions="0.15, 0.8"
-	maxHeight="240.0" maxWidth="280.0" minHeight="240.0" minWidth="280.0"
-	orientation="VERTICAL" 
-	stylesheets="/layout/css/screen_layout.css"
-	xmlns="http://javafx.com/javafx/8.0.171"
-	xmlns:fx="http://javafx.com/fxml/1"
-	fx:controller="controller.screen.SMSController" >
+<SplitPane fx:id="mainSplitPane" dividerPositions="0.15, 0.8" maxHeight="240.0" maxWidth="280.0" minHeight="240.0" minWidth="280.0" orientation="VERTICAL" stylesheets="/layout/css/screen_layout.css" xmlns="http://javafx.com/javafx/8.0.171" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.screen.SMSController">
 	<items>
 
-		<SplitPane dividerPositions="0.4" prefHeight="200.0"
-			prefWidth="200.0" >
-			<items>
-				<Label prefHeight="24.0" prefWidth="37.0" text="DO:" />
-				<TextField fx:id="contactField" editable="false"/>
-			</items>
+		<SplitPane dividerPositions="0.5" prefHeight="200.0" prefWidth="200.0">
+         <items>
+      				<Label prefHeight="24.0" prefWidth="37.0" text="DO:" />
+            <ComboBox fx:id="contactComboBox" editable="true" prefWidth="230.0" />
+         </items>
 		</SplitPane>
-		<TextArea fx:id="smsContent" prefHeight="200.0"
-			prefWidth="200.0" editable="false"/>
-		<SplitPane dividerPositions="0.5" maxHeight="30.0"
-			minHeight="30.0" prefHeight="30.0"
-			stylesheets="/layout/css/screen_options.css">
+      <StackPane prefHeight="150.0" prefWidth="200.0">
+         <children>
+      		<TextArea fx:id="smsContent" editable="false" prefHeight="200.0" prefWidth="200.0" />
+            <Label  fx:id="sendingLabel" maxWidth="270.0" minWidth="270.0" text="Label" StackPane.alignment="BOTTOM_CENTER" visible="false"/>
+         </children>
+      </StackPane>
+		<SplitPane dividerPositions="0.5" maxHeight="30.0" minHeight="30.0" prefHeight="30.0" stylesheets="/layout/css/screen_options.css">
 			<items>
-				<Label fx:id="leftLabel" alignment="CENTER" layoutX="10.0"
-					layoutY="10.0" maxHeight="1.7976931348623157E308"
-					maxWidth="1.7976931348623157E308" text="Wyslij" />
-				<Label fx:id="rightLabel" alignment="CENTER" layoutX="10.0"
-					layoutY="10.0" maxHeight="1.7976931348623157E308"
-					maxWidth="1.7976931348623157E308" text="Usun" />
+				<Label fx:id="leftLabel" alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Wybierz" />
+				<Label fx:id="rightLabel" alignment="CENTER" layoutX="10.0" layoutY="10.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Usun" />
 			</items>
 		</SplitPane>
 	</items>

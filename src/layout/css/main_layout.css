@@ -1,5 +1,6 @@
 	.split-pane *.split-pane-divider {
     -fx-padding: 0;
+    -fx-cursor: default;
     
 }
 .split-pane{
@@ -10,4 +11,11 @@
 	-fx-min-width: 150;
 	-fx-max-width: 150;
 	-fx-border-radius: 5;
+}
+.text-field{
+	-fx-cursor: default;
+}
+.text-field:disabled{
+	-fx-cursor: default;
+	-fx-opacity: 1.0;
 }

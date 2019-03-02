@@ -4,9 +4,25 @@
 	-fx-border-radius: 5.0;
 	-fx-border-insets: 5,0,0,0;
 	
-	
 	-fx-background-color:  rgb(13,200,27) ;
 		-fx-background-radius: 5.0;
 	-fx-background-insets: 5,0,0,0;
 }
+.list-view .scroll-bar:vertical {
+	-fx-max-width: 0;
+	-fx-scale-x: 0;
+	-fx-scale-y: 0;
+	-fx-padding:-10;
+}
+#caller:disabled{
+	-fx-opacity: 0.6;
+}
+#contactCaller:disabled{
+	-fx-background-color: green;
+	 -fx-opacity: 1;
+	 -fx-min-width: 270;
+	 -fx-max-width: 270;
+	 -fx-padding: 3,0,3,0;
+}
+
 
